@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+        ddl-auto: update
+        enable_lazy_load_no_trans: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        search:
+          default:
+            directory_provider: filesystem
+            default:
+              indexBase = /indexes
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/book
+    username: postgres
+    password: admin
+    
+logging:
+  level:
+    com:
+      book: info
